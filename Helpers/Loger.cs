@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace LibTest
+namespace UtopiaUtilities
 {
 	public class Loger
 	{

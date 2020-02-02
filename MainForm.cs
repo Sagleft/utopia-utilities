@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Diagnostics;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UtopiaLib;
 
-namespace LibTest
+namespace UtopiaUtilities
 {
 	public partial class MainForm : Form
 	{
@@ -54,6 +55,20 @@ namespace LibTest
 		void Btn_clearlogClick(object sender, EventArgs e)
 		{
 			textBox_log.Clear();
+		}
+		
+		void BtnOpenGithubClick(object sender, EventArgs e)
+		{
+			Process.Start("https://github.com/Sagleft/utopia-utilities");
+		}
+		
+		bool isClientConnected() {
+			if(client == null || !client.checkClientConnection()) {
+				loger.print("No connection to Utopia client or received invalid data");
+				return false;
+			} else {
+				return true;
+			}
 		}
 	}
 }
